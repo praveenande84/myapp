@@ -1,5 +1,6 @@
 /* -----> Third Party Packages <----- */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 /* -----> Styles <----- */
 import './index.css';
@@ -8,12 +9,15 @@ import './index.css';
 const Card = (props) => {
 	console.log('Card Component');
 	const { cardData } = props;
-	const { title, body, useId } = cardData;
+	const { id, title, body } = cardData;
+
 	return (
-		<li className="card-component">
-			<h1>{title}</h1>
-			<p>{body}</p>
-		</li>
+		<Link to={`/data/${id}`} className="card-link">
+			<li className="card-component">
+				<h1>{title}</h1>
+				<p>{body}</p>
+			</li>
+		</Link>
 	);
 };
 

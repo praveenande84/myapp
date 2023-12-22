@@ -2,7 +2,11 @@ import React from 'react';
 
 const Login = () => {
 	console.log('Login Page');
-	return <div>Login</div>;
+	return (
+		<div>
+			<button type="button">Login</button>
+		</div>
+	);
 };
 
 export default Login;

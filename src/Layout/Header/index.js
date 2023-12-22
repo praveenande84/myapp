@@ -1,12 +1,17 @@
 /* -----> Third Party Packages <----- */
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+
+/* -----> Context <----- */
+import MyContext from '../../Context/MyContext';
 
 /* -----> Styles <----- */
 import './index.css';
 
 const Header = () => {
 	console.log('Header Layout');
+	const { isLogin, setIsLogin } = useContext(MyContext);
+	const login_text = isLogin ? 'Login' : 'Logout';
 	return (
 		<div className="header-layout">
 			<nav className="navbar">
@@ -24,7 +29,14 @@ const Header = () => {
 					</li>
 				</ul>
 				<div>
-					<button type="button">Logout</button>
+					<button
+						type="button"
+						onClick={() => {
+							setIsLogin(!isLogin);
+						}}
+					>
+						{login_text}
+					</button>
 				</div>
 			</nav>
 		</div>
