@@ -1,0 +1,24 @@
+.navbar{
+    border: 10px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 50px;
+    padding:10px;
+}
+
+.nav-items-container{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+}
+
+
+.nav-items-container{
+    list-style-type: none;
+}
+
+.nav-items-container li a{
+    text-decoration: none;
+}
